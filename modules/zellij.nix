@@ -9,7 +9,7 @@
 
   programs.zellij = {
     enable = true;
-    enableFishIntegration = true;
+    enableFishIntegration = false;
     exitShellOnExit = false;
   };
 }

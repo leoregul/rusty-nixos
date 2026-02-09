@@ -24,6 +24,7 @@
       ls = "eza --icons $eza_params";
       ll = "eza --all --long --icons $eza_params";
       lt = "eza --tree --icons $eza_params";
+      zj = "zellij";
     };
   };
 }
