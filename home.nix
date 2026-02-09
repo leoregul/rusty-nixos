@@ -6,7 +6,7 @@
   dotfiles = "${config.home.homeDirectory}/rusty-nixos/config";
   createSymlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
-    qtile = "qtile";
+    # qtile = "qtile";
   };
 in {
   imports = [
