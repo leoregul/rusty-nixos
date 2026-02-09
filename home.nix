@@ -10,6 +10,7 @@
   };
 in {
   imports = [
+    ./modules/niri.nix
     ./modules/alacritty.nix
     ./modules/bash.nix
     ./modules/fish.nix

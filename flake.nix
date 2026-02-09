@@ -12,6 +12,10 @@
       url = "github:catppuccin/nix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -19,6 +23,7 @@
     nixpkgs,
     home-manager,
     catppuccin,
+    niri,
     ...
   }: {
     nixosConfigurations.rusty-nixos = nixpkgs.lib.nixosSystem {
@@ -26,6 +31,7 @@
       modules = [
         ./configuration.nix
         catppuccin.nixosModules.catppuccin
+        niri.nixosModules.niri
         home-manager.nixosModules.home-manager
         {
           home-manager = {
