@@ -32,15 +32,22 @@
         ./configuration.nix
         catppuccin.nixosModules.catppuccin
         niri.nixosModules.niri
+        {
+          nixpkgs.overlays = [niri.overlays.niri];
+        }
         home-manager.nixosModules.home-manager
         {
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
+            sharedModules = [
+              catppuccin.homeModules.catppuccin
+            ];
             users.igor = {
               imports = [
                 ./home.nix
-                catppuccin.homeModules.catppuccin
+                # catppuccin.homeModules.catppuccin
+                # niri.homeModules.niri
               ];
             };
             backupFileExtension = "backup";

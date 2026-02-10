@@ -33,6 +33,8 @@ in {
   home.homeDirectory = "/home/igor";
   home.stateVersion = "25.11";
 
+  programs.home-manager.enable = true;
+
   xdg.configFile =
     builtins.mapAttrs
     (name: subpath: {

@@ -11,7 +11,7 @@
     enable = true;
     settings = {
       font = {
-        size = 17;
+        size = 12;
         normal = {
           family = "CaskaydiaCove Nerd Font";
           style = "Regualr";
@@ -26,6 +26,10 @@
       window = {
         startup_mode = "Maximized";
         decorations = "None";
+        padding = {
+          x = 4;
+          y = 4;
+        };
       };
     };
   };

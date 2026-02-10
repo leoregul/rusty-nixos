@@ -39,20 +39,24 @@
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
 
+  # environment.pathsToLink = ["/share/applications" "/share/xdg-desktop-portal"];
+  services.displayManager.gdm.enable = true;
+  hardware.graphics.enable = true;
+
   # Enable the X11 windowing system.
-  services.displayManager.ly.enable = true;
-  services.xserver = {
-    enable = true;
-    autoRepeatDelay = 200;
-    autoRepeatInterval = 35;
-    # windowManager.qtile.enable = true;
-    extraConfig = ''
-      Section "Monitor"
-        Identifier "Virtual-1"
-        Option "PreferredMode" "1920x1080"
-      EndSection
-    '';
-  };
+  # services.displayManager.ly.enable = true;
+  # services.xserver = {
+  #   enable = true;
+  #   autoRepeatDelay = 200;
+  #   autoRepeatInterval = 35;
+  #   # windowManager.qtile.enable = true;
+  #   extraConfig = ''
+  #     Section "Monitor"
+  #       Identifier "Virtual-1"
+  #       Option "PreferredMode" "1920x1080"
+  #     EndSection
+  #   '';
+  # };
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -83,9 +87,11 @@
 
   programs.firefox.enable = true;
 
+  # systemd.user.services.niri-flake-polkit.enable = false;
   programs.niri = {
     enable = true;
     package = pkgs.niri;
+    # package = pkgs.niri-unstable;
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -93,6 +99,7 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
+    xwayland-satellite
     vim
     wget
     git
